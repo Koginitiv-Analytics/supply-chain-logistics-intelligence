@@ -64,3 +64,45 @@ print("---URGENT REORDER CLASS---")
 print(critical_reorders['ABC_class'].value_counts())
 
 critical_reorders[df['ABC_class'] == 'A'].head(10)
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set_theme(style="whitegrid")
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+sns.barplot(
+    data=df,
+    x='ABC_class',
+    y='Total_Revenue',
+  hue='ABC_class',
+  estimator=sum,
+  errorbar=None,
+   palette=['#2ecc71', '#3498db', '#e74c3c'],
+   legend=False,
+    ax=axes[0]
+)
+
+axes[0].set_title('Total Revenue By ABC class', fontsize=12, fontweight='bold')
+axes[0].set_xlabel('ABC Class', fontsize=10)
+axes[0].set_ylabel('Total Revenue($)', fontsize=10)
+
+sns.countplot(
+    data=df,
+      x='Reorder_Alert',
+     hue='Reorder_Alert',
+    palette=['#2ecc71', '#e74c3c'],
+     legend=False,
+     ax=axes[1]
+)
+
+axes[1].set_title('Stock Status: Safe vs. Reorder Needed', fontsize=12, fontweight='bold')
+axes[1].set_xlabel('Reorder Needed', fontsize=10)
+axes[1].set_ylabel('Number Of SKUs', fontsize=10)
+axes[1].set_xticklabels(['Safe(False)', 'Reorder Urgently(True)'])
+
+plt.tight_layout()
+plt.show()
+
+
