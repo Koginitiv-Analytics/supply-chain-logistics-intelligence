@@ -9,7 +9,13 @@ This project analyzes a dataset of 100 SKUs to optimize inventory levels, establ
 
 ## 📊 Key Findings & Insights
 * **Reorder Alerts:** Identified **42 out of 100 SKUs** currently sitting below their calculated Reorder Point.
-* **Urgent Class A SKUs:** **36 of the 42 flagged SKUs** belong to **Class A** (top 80% revenue drivers). Immediate purchase orders are required to prevent revenue loss.
+* **Urgent Class A SKUs:** **36 of the 42 flagged SKUs** belong to **Class A** (top 80% revenue drivers). Immediate purchase orders are required to prevent revenue loss.*
+
+* ## 📈 Visualizations
+![ABC Inventory & Reorder Analysis](your_image_filename.png)
+> *Note: Key charts showing ABC revenue classification breakdown and inventory reorder status.*
+
+
 
 ## 💻 Python Implementation (Calculations)
 ```python
