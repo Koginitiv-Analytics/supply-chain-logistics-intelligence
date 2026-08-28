@@ -1,4 +1,4 @@
-# 📦 Supply Chain Inventory & ABC Reorder Point Analysis
+1.# 📦 Supply Chain Inventory & ABC Reorder Point Analysis
 
 ## 🎯 Executive Summary
 This project analyzes a dataset of 100 SKUs to optimize inventory levels, establish automated safety stock/reorder thresholds, and perform ABC revenue classification to prevent stockouts on high-value products.
@@ -27,3 +27,20 @@ df['Reorder_Alert'] = df['Stock levels'] < df['Reorder_Point']
 
 # ABC Inventory Categorization
 df['Cum_Percen'] = (df['Total_Revenue'].cumsum() / df['Total_Revenue'].sum()) * 10
+
+
+
+2.# Supply Chain & Logistics Analytics Portfolio
+
+## 📦 Project Overview
+An end-to-end analytics and machine learning solution for supply chain optimization, addressing logistics cost bottlenecks, supplier quality risks, ABC inventory management, and predictive stockout forecasting.
+
+## 🛠️ Key Pipeline Modules
+1. **Logistics & Supplier Quality Analysis:** Evaluated transportation mode efficiency, shipping cost distributions, and supplier defect rates.
+2. **Inventory Stockout Risk (ABC Analysis):** Identified high-risk inventory items and evaluated stockout thresholds against order volume demands.
+3. **Predictive Machine Learning (Stockout Risk Classifier):** Built a target-leakage-free Random Forest model to forecast stockout probability.
+
+## 📊 Model Performance Highlights
+* **Accuracy:** 65.00% on unseen test data
+* **Stockout Recall (Class 1):** 73% (successfully flags 8 out of 10 high-risk orders)
+* **Top Drivers:** `order_quantities` (24.6%) and `lead_time_demand` (19.6%)
