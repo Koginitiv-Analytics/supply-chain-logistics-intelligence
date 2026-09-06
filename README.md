@@ -1,4 +1,4 @@
-1.# 📦 Supply Chain Inventory & ABC Reorder Point Analysis
+[1].# 📦 Supply Chain Inventory & ABC Reorder Point Analysis
 
 ## 🎯 Executive Summary
 This project analyzes a dataset of 100 SKUs to optimize inventory levels, establish automated safety stock/reorder thresholds, and perform ABC revenue classification to prevent stockouts on high-value products.
@@ -32,7 +32,7 @@ df['Cum_Percen'] = (df['Total_Revenue'].cumsum() / df['Total_Revenue'].sum()) * 
 
 
 
-2.# Supply Chain & Logistics Analytics Portfolio
+[2].# Supply Chain & Logistics Analytics Portfolio
 
 ## 📦 Project Overview
 An end-to-end analytics and machine learning solution for supply chain optimization, addressing logistics cost bottlenecks, supplier quality risks, ABC inventory management, and predictive stockout forecasting.
@@ -49,7 +49,7 @@ An end-to-end analytics and machine learning solution for supply chain optimizat
 
 
 
-3.# Geospatial Supply Chain & Transit Delay Analytics
+[3].# Geospatial Supply Chain & Transit Delay Analytics
 
 ## 📌 Executive Summary
 This project analyzes global supply chain shipping routes and delay patterns using **GeoPandas**, **Shapely**, and **Folium**. By calculating exact transit distances from a central logistics hub (Chicago) and testing geofenced risk zones, the analysis demonstrates that delivery delay rates remain consistently around **~55%** regardless of shipping distance.
@@ -74,7 +74,4 @@ The script generates three standalone interactive HTML maps located in the `maps
 - `geofenced_risk_zones.html`: 500 km and 1,000 km buffer rings around the central distribution hub.
 - `routes.html`: Origin-to-destination corridor routes generated using `LineString` geometries.
 
-## 🚀 How to Run
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/your-username/geospatial-supply-chain-analytics.git](https://github.com/your-username/geospatial-supply-chain-analytics.git)
+
