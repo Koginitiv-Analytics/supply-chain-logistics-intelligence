@@ -49,14 +49,14 @@ An end-to-end analytics and machine learning solution for supply chain optimizat
 
 
 
-[3].# Geospatial Supply Chain & Transit Delay Analytics
+[3]# Geospatial Supply Chain & Transit Delay Analytics
 
 ## 📌 Executive Summary
 This project analyzes global supply chain shipping routes and delay patterns using **GeoPandas**, **Shapely**, and **Folium**. By calculating exact transit distances from a central logistics hub (Chicago) and testing geofenced risk zones, the analysis demonstrates that delivery delay rates remain consistently around **~55%** regardless of shipping distance.
 
 ## 🛠️ Tech Stack & Libraries
 - **Language:** Python
-- **Spatial Analysis:** GeoPandas, Shapely (`Point`, `LineString`)
+- **Spatial Analysis:** GeoPandas, Shapely (`Point`, `LineString`, `Polygon`)
 - **Data Processing:** Pandas, NumPy
 - **Interactive Visualization:** Folium (`HeatMap`, `Polygon`, `PolyLine`)
 - **Dataset:** DataCo Smart Supply Chain Dataset
@@ -65,13 +65,31 @@ This project analyzes global supply chain shipping routes and delay patterns usi
 1. **Distance vs. Delay Rate:**
    - **Inner Zone (<500 km):** 55.57% Late Rate
    - **Mid Zone (500–1,000 km):** 54.71% Late Rate
-   - **Outer Long-Haul (>1,000 km):** 54.78% Late Rate
-2. **Operational Takeaway:** Transit distance is not the root driver of fulfillment delays in this network, pointing to internal warehouse processing or carrier scheduling as the main bottlenecks.
+   - **Outer Long-Haul (>1,000 km):** 54.71% Late Rate
+2. **Operational Takeaway:** Transit distance is not the root driver of fulfillment delays in this network, pointing to upstream warehouse processing or carrier scheduling as the primary bottlenecks rather than transit mileage alone.
 
-## 🗺️ Interactive Visualizations
-The script generates three standalone interactive HTML maps located in the `maps/` directory:
-- `supply_chain_risk_map.html`: Density heatmap overlay of global late deliveries.
-- `geofenced_risk_zones.html`: 500 km and 1,000 km buffer rings around the central distribution hub.
-- `routes.html`: Origin-to-destination corridor routes generated using `LineString` geometries.
+---
+
+## 🗺️ Geospatial Visualizations
+
+### 1. Delivery Delay Density Heatmap
+Visualizes the geographic concentration of late delivery events across fulfillment zones to isolate macro-level fulfillment pressure points.
+
+![Delivery Delay Heatmap](images/heatmap.jpg)
+
+---
+
+### 2. Multi-Tier Geofenced Service Zones (500km & 1000km)
+Concentric metric buffers generated around the central distribution hub using `EPSG:3857` metric projections and Shapely polygons to evaluate distance-based SLA adherence.
+
+![Geofenced Service Zones](images/geofence_zones.jpg)
+
+---
+
+### 3. Hub-to-Destination Transit Corridors
+Spider route mapping utilizing Shapely `LineString` geometries to trace origin-to-destination fulfillment paths for late-delivery orders.
+
+![Hub Transit Routes](images/hub_routes.jpg)
+
 
 
